@@ -1,0 +1,68 @@
+body {
+  background-color: #0A0A0A; /* carbon black */
+  color: white;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.home-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 8rem 1rem 4rem; /* top padding increased to make room for nav */
+  color: white;
+  background: radial-gradient(circle at top, #151C28 0%, #0A0A0A 80%);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+/* Title with glow underline */
+.home-title {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+
+/* Sub text */
+.home-sub {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #BBDEFB;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.highlight {
+  position: relative;
+  background: linear-gradient(90deg, #2196F3, #BBDEFB, #2196F3);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Navbar styles merged here - transparent to match hero */
+.nav { position: absolute; top: 18px; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; background: transparent; color: inherit; z-index: 40; }
+.brand { font-weight: 700; }
+.brand a { color: #fff; text-decoration: none; }
+.nav-center { display: flex; gap: 20px; align-items: center; }
+.nav-item { color: #fff; text-decoration: none; padding: 8px 12px; border-radius: 8px; transition: background-color 180ms ease, transform 180ms ease, color 180ms ease; transform-origin: center; display: inline-block; }
+/* cyan hover with slight scale and darker text for contrast */
+.nav-item:hover {color: #0088c2; transform: scale(1.06); }
+.nav-item.active {color: #0088c2; transform: scale(1.06); }
+.nav-right { display: flex; align-items: center; }
+.get-started { background: #fff; color: #000; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+.get-started:hover { opacity: 0.95; }

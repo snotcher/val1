@@ -1,0 +1,56 @@
+/* Paper / Note Styles */
+.paper-container {
+  width: 90%;
+  max-width: 500px;
+  background-color: #fdf6e3;
+  /* Creamy paper color */
+  margin: 20px auto;
+  padding: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.8s ease-out;
+}
+
+.paper-lines {
+  background-image: linear-gradient(#999 1px, transparent 1px);
+  background-size: 100% 1.5em;
+  /* Line height match */
+  padding: 1.5em 20px;
+  min-height: 200px;
+}
+
+.paper-text {
+  font-family: 'Courier New', Courier, monospace;
+  /* Typewriter/handwritten feel */
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  /* Must match background-size */
+  color: #333;
+  margin: 0;
+  white-space: pre-wrap;
+  /* Preserve line breaks */
+  word-wrap: break-word;
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.screenshot-instruction {
+  margin-top: 20px;
+  color: #e91e63;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2rem;
+  animation: pulse 2s infinite;
+}

@@ -1,0 +1,50 @@
+.features-root {
+  position: relative;
+  padding: 6rem 2rem;
+  background-color: #0f111a;
+  color: #fff;
+}
+
+.features-root h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #60a5fa;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Modern SaaS card */
+.card {
+  background: #151c28;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: left;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(59,130,246,0.35);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
