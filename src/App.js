@@ -23,6 +23,9 @@ function App() {
     if (!noteContent.trim()) return;
 
     setIsSending(true);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
     try {
       const response = await fetch('/api/save-message', {
         method: 'POST',
@@ -30,7 +33,10 @@ function App() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ message: noteContent }),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       if (response.ok) {
         setMessageSubmitted(true);
@@ -39,7 +45,11 @@ function App() {
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Something went wrong. Please check your connection! 😢");
+      if (error.name === 'AbortError') {
+        alert("Connection timed out. Please check if your MongoDB IP is whitelisted! 🌐");
+      } else {
+        alert("Something went wrong. Please check your connection! 😢");
+      }
     } finally {
       setIsSending(false);
     }
@@ -56,8 +66,8 @@ function App() {
     //    after the API code downloads.
     window.onYouTubeIframeAPIReady = () => {
       playerRef.current = new window.YT.Player('youtube-player', {
-        height: '0',
-        width: '0',
+        height: '1',
+        width: '1',
         videoId: 'SOJpE1KMUbo',
         playerVars: {
           'autoplay': 1,
